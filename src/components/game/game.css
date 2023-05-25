@@ -1,0 +1,106 @@
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.game {
+  display: grid;
+  gap: 10px;
+  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 350px;
+  min-height: 200px;
+  grid-template-rows: repeat(3, 1fr);
+  margin: 10 auto;
+}
+
+.game image {
+  cursor: pointer;
+}
+
+.change {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+h1,
+h2 {
+  text-transform: uppercase;
+  color: #fff;
+}
+.by {
+  grid-column: 3/4;
+}
+
+.circle {
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+}
+.circle-result {
+  place-items: center;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+}
+
+nav {
+  background-image: url(../../assets/images/bg-triangle.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.rock {
+  border: 15px solid var(--color-rock-variant);
+  box-shadow: 1px 7px var(--color-rock);
+}
+
+.scissors {
+  border: 15px solid var(--color-scissors-variant);
+  box-shadow: 1px 7px var(--color-scissors);
+}
+
+.paper {
+  border: 15px solid var(--color-paper-variant);
+  box-shadow: 1px 7px var(--color-paper);
+}
+
+.circle:hover {
+  background-color: var(--color-Header);
+}
+
+.result-hidden {
+  display: none;
+}
+
+.btn-again {
+  background-color: #fff;
+  color: var(--color-rock-variant);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 417px) {
+  .game {
+    /* width: 100%; */
+    /* padding: 5px; */
+  }
+  nav {
+    background-size: auto;
+  }
+  .circle {
+    margin-top: 220px;
+    /* display: inline-block; */
+    /* max-width: 120px;
+    min-height: 120px; */
+  }
+}

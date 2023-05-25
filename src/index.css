@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-scissors: hsl(39, 89%, 49%);
+  --color-scissors-variant: hsl(40, 84%, 53%);
+  --color-paper: hsl(230, 89%, 62%);
+  --color-paper-variant: hsl(230, 89%, 65%);
+  --color-rock: hsl(349, 71%, 52%);
+  --color-rock-variant: hsl(349, 70%, 56%);
+  --color-score: hsl(229, 64%, 46%);
+  --color-dark: hsl(229, 25%, 31%);
+  --color-Header: hsl(217, 16%, 45%);
+  --color-bg: hsl(214, 47%, 23%);
+  --color-bg-variant: hsl(237, 49%, 15%);
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body {
+  padding: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: var(--color-bg);
+}
+
+body {
+  background-image: url({showNotice});
+}

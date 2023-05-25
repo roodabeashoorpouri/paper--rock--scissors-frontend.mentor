@@ -1,0 +1,40 @@
+.box {
+  max-width: 50rem;
+  min-height: 10rem;
+  border: 5px solid var(--color-Header);
+  border-radius: 10px;
+  padding: 20px;
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.name {
+  text-transform: uppercase;
+  color: #fff;
+  grid-column: 1 / 4;
+  box-sizing: content-box;
+}
+
+.score {
+  text-align: center;
+
+  padding: 8px;
+  background-color: #fff;
+  border: 2px solid var(--color-Header);
+  border-radius: 10px;
+  grid-column: 6 / 7;
+}
+
+.score h4 {
+  letter-spacing: 2px;
+  color: var(--color-score);
+}
+.score h1 {
+  font-size: 60px;
+
+  color: var(--color-dark);
+}
