@@ -11,8 +11,9 @@ const Game = () => {
   const [userChoice, setUserChoice] = useState("");
   const [computerChoice, setComputerChoice] = useState("");
   const [result, setResult] = useState("");
+  const [score, setScore] = useState(0); // New state for score
 
-  const handleClick = (choice: string) => {
+  const handleClick = (choice: React.SetStateAction<string>) => {
     setUserChoice(choice);
     const computerRandomChoice =
       options[Math.floor(Math.random() * options.length)];
@@ -24,8 +25,10 @@ const Game = () => {
       (choice === "scissors" && computerRandomChoice === "paper")
     ) {
       setResult("YOU WIN");
+      setScore(score + 1); // Increment score when user wins
     } else {
       setResult("YOU LOSE");
+      setScore(score - 1); // Decrement score when computer wins
     }
   };
 
@@ -34,6 +37,7 @@ const Game = () => {
     setComputerChoice("");
     setResult("");
   };
+
   const getImageSrc = (choice: string) => {
     switch (choice) {
       case "paper":
@@ -49,6 +53,7 @@ const Game = () => {
 
   return (
     <main>
+      {score}
       <nav className={`${result ? "result-hidden" : ""}`}>
         <div className='game'>
           <div className={`grid ${result ? "result-hidden" : ""}`}>
@@ -83,46 +88,50 @@ const Game = () => {
           </div>
         </div>
       </nav>
-      <div>
+      <div className='game-result'>
         {result && (
-          <div className='game'>
+          <div>
             <h1>{result}</h1>
             <div className='choices'>
-              <h2>You Picked</h2>
-              <div
-                className={`circle-result 
+              <div className='result-text'>
+                <h2>You Picked</h2>
+                <div
+                  className={`circle-result 
                 ${userChoice === "rock" ? "rock" : ""}
                  ${userChoice === "paper" ? "paper" : ""}
                 ${userChoice === "scissors" ? "scissors" : ""}
                 `}
-              >
-                <img
-                  src={getImageSrc(userChoice)}
-                  alt={userChoice}
-                  className='choice-image'
-                />
+                >
+                  <img
+                    src={getImageSrc(userChoice)}
+                    alt={userChoice}
+                    className='choice-image'
+                  />
+                </div>
               </div>
-              <h2>The house picked</h2>
-              <div
-                className={`circle-result 
+              <div className='result-text'>
+                <h2>The house picked</h2>
+                <div
+                  className={`circle-result 
                 ${computerChoice === "rock" ? "rock" : ""}
                  ${computerChoice === "paper" ? "paper" : ""}
                 ${computerChoice === "scissors" ? "scissors" : ""}
                 `}
-              >
-                <img
-                  src={getImageSrc(computerChoice)}
-                  alt={computerChoice}
-                  className='choice-image'
-                />
+                >
+                  <img
+                    src={getImageSrc(computerChoice)}
+                    alt={computerChoice}
+                    className='choice-image'
+                  />
+                </div>
               </div>
             </div>
+            {result && (
+              <button className='btn-again' onClick={playAgain}>
+                PLAY AGAIN
+              </button>
+            )}
           </div>
-        )}
-        {result && (
-          <button className='btn-again' onClick={playAgain}>
-            PLAY AGAIN
-          </button>
         )}
       </div>
     </main>

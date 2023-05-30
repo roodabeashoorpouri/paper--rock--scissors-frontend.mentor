@@ -1,6 +1,6 @@
 import "./score.css";
 
-const score = () => {
+const Score = () => {
   return (
     <div className='box'>
       <div className='name'>
@@ -9,11 +9,10 @@ const score = () => {
         </h1>
       </div>
       <div className='score'>
-        <h4>SCORE</h4>
-        <h1>12</h1>
+        <p> Score: "score"</p> {/* Display the score */}
       </div>
     </div>
   );
 };
 
-export default score;
+export default Score;

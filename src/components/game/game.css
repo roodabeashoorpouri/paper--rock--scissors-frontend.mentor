@@ -16,6 +16,38 @@ nav {
   margin: 10 auto;
 }
 
+.game-result {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.choices {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+.result-text {
+  display: inline-block;
+  margin: 20px;
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+.circle-result {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+}
+
 .game image {
   cursor: pointer;
 }
@@ -36,15 +68,6 @@ h2 {
 
 .circle {
   cursor: pointer;
-  border-radius: 50%;
-  background-color: rgb(255, 255, 255);
-  padding: 15px;
-}
-.circle-result {
-  place-items: center;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
   border-radius: 50%;
   background-color: rgb(255, 255, 255);
   padding: 15px;
